@@ -1,0 +1,360 @@
+h1 {
+
+  text-transform: uppercase;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+
+body {
+  margin: 0;
+}
+
+.bg1 {
+  background-color: #000000a6;
+  margin-top: 0;
+}
+
+.img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+/***********************************************************NAVBAR***********************************************/
+
+#Navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 70%;
+  margin: auto;
+  font-weight: bolder;
+  font-family: 'Poiret One', cursive;
+}
+
+#logo {
+  font-size: 1.4em;
+  padding-bottom: 8px;
+
+}
+
+#link_nav {
+  position: absolute;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  padding-left: 3%;
+  padding-top: -4px;
+  padding-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.74);
+  font-size: 1em;
+}
+
+
+
+#link_nav a {
+  text-decoration: none;
+  color: whitesmoke;
+  margin-bottom: -0.3em;
+}
+
+#Navbar a {
+  padding-bottom: 2px;
+  border-bottom: 2px solid whitesmoke;
+  letter-spacing: 0.1em;
+}
+
+#link_nav a:hover {
+  color: grey;
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.4s ease-in-out;
+}
+
+.m-nav-toggle {
+  width: 30px;
+  height: 23px;
+  margin-left: 60%;
+  display: none;
+  align-items: center;
+  cursor: pointer;
+  z-index: 100;
+}
+
+span.m-toggle-icon,
+span.m-toggle-icon:before,
+span.m-toggle-icon:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  position: relative;
+}
+
+span.m-toggle-icon:before {
+  top: 10px;
+}
+
+span.m-toggle-icon:after {
+  top: -13px;
+}
+
+#Navbar.is-open {
+  transform: translateY(0);
+}
+
+/***********************************************************HEADER***********************************************/
+
+
+
+.main_title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  margin-top: 15em;
+  z-index: 50;
+  text-align: center;
+}
+
+.title {
+  background-color: rgba(0, 0, 0, 0.74);
+  padding: 0.5em;
+  width: 70%;
+  color: whitesmoke;
+  font-size: 3em;
+  font-weight: 600;
+  line-height: 0.9em;
+  ;
+  border-radius: 5px;
+  letter-spacing: 0.1em;
+}
+
+
+#slider {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+#slider figure img {
+  width: 20%;
+  float: left;
+}
+
+#slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  animation: 20s slider infinite;
+}
+
+#slider p {
+  display: flex;
+  flex-direction: row;
+  height: 1.4em;
+  background-color: grey;
+  font-size: 0.6em;
+  font-weight: 800;
+  position: absolute;
+  z-index: 10;
+  margin-top: 1.2em;
+  margin-left: 6.4em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+* {
+  margin: 0
+}
+
+@keyframes slider {
+  0% {
+    left: 0;
+  }
+
+  20% {
+    left: 0;
+  }
+
+  25% {
+    left: -100%;
+  }
+
+  45% {
+    left: -100%;
+  }
+
+  50% {
+    left: -200%;
+  }
+
+  70% {
+    left: -200%;
+  }
+
+  75% {
+    left: -300%;
+  }
+
+  95% {
+    left: -300%;
+  }
+
+  100% {
+    left: -400%;
+  }
+}
+
+.title2 {
+  margin-left: 27%;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  letter-spacing: 0.1em;
+}
+
+.title3 {
+  margin-left: 10%;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  letter-spacing: 0.1em;
+}
+
+/***********************************************************CAROUSEL***********************************************/
+
+.carousel {
+
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5em;
+}
+
+.carousel__view {
+  width: calc((300px*4) + 22px);
+  height: 300px;
+  background: white;
+  box-shadow: 0 1px 8px #888;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel__control {
+  position: absolute;
+  z-index: 1;
+  height: 300px;
+  width: 70px;
+  background-color: rgba(221, 221, 221, .5);
+  transition: background-color 0.3s;
+  display: table;
+}
+
+.carousel__control .icon {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.carousel__control:hover {
+  background-color: rgba(221, 221, 221, .8);
+  cursor: pointer;
+}
+
+.carousel__control:first-of-type {
+  left: 0;
+}
+
+.carousel__control:last-of-type {
+  right: 0;
+}
+
+.product-list {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.3s;
+  transform: translateX(0px);
+  list-style: none;
+  height: 300px;
+}
+
+.product-list__item {
+  width: 200px;
+  height: 300px;
+  display: inline-block;
+}
+
+.product {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.product span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  color: white;
+  font-size: 50px;
+}
+
+
+
+/***********************************************************PARALLAX***********************************************/
+
+.parallax-window {
+  min-height: 250px;
+  background: transparent;
+
+}
+
+/***********************************************************PRESENTATION***********************************************/
+
+.container-titre {
+  margin-top: -30px;
+}
+
+
+/***********************************************************FOOTER***********************************************/
+
+
+#footer {
+  background-color: #c7c3c3;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+#footer a {
+  color: white;
+
+}
+
+
+/***********************************************************MEDIA QUERIES***********************************************/
+
+@media only screen and (max-width: 1199px) {}
+
+@media only screen and (max-width: 880px) {
+
+
+  @media only screen and (max-width: 767px) {
+    .m-nav-toggle {
+      margin-left: 30%;
+    }
+
+    #Navbar {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {}
+
+  @media only screen and (max-width: 576px) {
+
+    .m-nav-toggle {
+      margin-left: 15%;
+    }
+
+  }
