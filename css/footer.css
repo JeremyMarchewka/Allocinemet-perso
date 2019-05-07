@@ -8,16 +8,15 @@
 ----pour le footer------
 -------------------------------*/
 #footer {
-  background-color: #c7c3c3;
-  font-family: 'Roboto Condensed', sans-serif;
-  border-block-start: solid 5px #47474773;
+  background-color: #272727;
+	font-family: 'Roboto Condensed', sans-serif;
+	line-height: 1.4em;
 }
 
 #footer a {
   color: white;
 
 }
-
 
 /*----------------------------------
 ----------media query----------------

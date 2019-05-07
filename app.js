@@ -27,7 +27,7 @@ $(document).ready(function(){
             else{
             $(".navbar").removeClass("navbar-scroll");  	
         }
-        if (scroll > 200) {
+        if (scroll > 1) {
           $(".navbar").addClass("bg-primary");
         }
   

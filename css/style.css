@@ -5,13 +5,27 @@ h1 {
   font-weight: bold;
 }
 
+html{
+	margin: 0;
+	padding: 0;
+}
+
 *{
 	margin: 0;
 	padding: 0;
 }
 
 body {
+	width: 100%;
 	margin: 0;
+	font-size: 20px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feffe8+43,969191+100 */
+background: rgb(254,255,232); /* Old browsers */
+background: -moz-linear-gradient(-45deg, rgba(254,255,232,1) 43%, rgba(150,145,145,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, rgba(254,255,232,1) 43%,rgba(150,145,145,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, rgba(254,255,232,1) 43%,rgba(150,145,145,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffe8', endColorstr='#969191',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 
 .bg1 {
@@ -38,7 +52,7 @@ body {
   align-items: center;
   -ms-flex-pack: justify;
   justify-content: space-between;
-	padding: .5rem 1rem;
+	width: 100%;
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -52,7 +66,6 @@ body {
 
 .navbar-brand{
 	font-size: 1.3em;
-	font-weight: 400;
 	font-family: 'Anton', sans-serif;
 	letter-spacing: 0.1em;
 	color: rgba(190, 0, 0, 0.993)!important;
@@ -61,7 +74,7 @@ body {
 
 .navbar-brand span{
 	letter-spacing: 0.1em;
-	color: white!important;
+	color: #eee!important;
 }
 .navbar-scroll {
   background-color: rgba(22, 22, 22, 0.979);
@@ -153,13 +166,14 @@ h1.main, p.demos {
 .sp-container h2 {
 
 	position: absolute;
-	top: 8em;
+	top: 7em;
 	line-height: 100px;
 	height: 90px;
 	margin-top: -1em;
 	font-size: 6em;
 	word-spacing: 0.3em;
 	font-family: 'Righteous', cursive;
+	font-weight: 600;
 	width: 100%;
 	text-align: center;
   color: transparent;
@@ -210,7 +224,7 @@ h1.main, p.demos {
 	-ms-animation: blurFadeIn 3s ease-in 9s backwards;
 	animation: blurFadeIn 3s ease-in 9s backwards;
 	color: transparent;
-	text-shadow: 0px 0px 1px rgb(22, 22, 22);
+	text-shadow: 0px 0px 1px black;
 }
 .sp-container h2.frame-5 span:nth-child(2) {
 	-webkit-animation-delay: 10s;
@@ -254,7 +268,7 @@ h1.main, p.demos {
 	line-height: 100px;
 	width: 100px;
 	height: 100px;
-	background: rgb(22, 22, 22);
+	background: black;
 	color: #3f1616;
 	font-size: 25px;
 	-webkit-border-radius: 50%;
@@ -272,41 +286,41 @@ h1.main, p.demos {
 }
 .sp-circle-link:hover {
 	background: #85373b;
-	color: rgb(22, 22, 22);
+	color: black;
 }
 /**/
 
 @-webkit-keyframes blurFadeInOut {
 	0% {
 		opacity: 0;
-		text-shadow: 0px 0px 40px rgb(22, 22, 22);
+		text-shadow: 0px 0px 40px black;
 		-webkit-transform: scale(1.3);
 	}
 	20%, 75% {
 		opacity: 1;
-		text-shadow: 0px 0px 1px rgb(22, 22, 22);
+		text-shadow: 0px 0px 1px black;
 		-webkit-transform: scale(1);
 	}
 	100% {
 		opacity: 0;
-		text-shadow: 0px 0px 50px rgb(22, 22, 22);
+		text-shadow: 0px 0px 50px black;
 		-webkit-transform: scale(0);
 	}
 }
 @-webkit-keyframes blurFadeIn {
 	0% {
 		opacity: 0;
-		text-shadow: 0px 0px 40px rgb(22, 22, 22);
+		text-shadow: 0px 0px 40px black;
 		-webkit-transform: scale(1.3);
 	}
 	50% {
 		opacity: 0.5;
-		text-shadow: 0px 0px 10px rgb(22, 22, 22);
+		text-shadow: 0px 0px 10px black;
 		-webkit-transform: scale(1.1);
 	}
 	100% {
 		opacity: 1;
-		text-shadow: 0px 0px 1px rgb(22, 22, 22);
+		text-shadow: 0px 0px 1px black;
 		-webkit-transform: scale(1);
 	}
 }
@@ -339,29 +353,29 @@ h1.main, p.demos {
 @-moz-keyframes blurFadeInOut {
 	0% {
 		opacity: 0;
-		text-shadow: 0px 0px 40px rgb(22, 22, 22);
+		text-shadow: 0px 0px 40px black;
 		-moz-transform: scale(1.3);
 	}
 	20%, 75% {
 		opacity: 1;
-		text-shadow: 0px 0px 1px rgb(22, 22, 22);
+		text-shadow: 0px 0px 1px black;
 		-moz-transform: scale(1);
 	}
 	100% {
 		opacity: 0;
-		text-shadow: 0px 0px 50px rgb(22, 22, 22);
+		text-shadow: 0px 0px 50px black;
 		-moz-transform: scale(0);
 	}
 }
 @-moz-keyframes blurFadeIn {
 	0% {
 		opacity: 0;
-		text-shadow: 0px 0px 40px rgb(22, 22, 22);
+		text-shadow: 0px 0px 40px black;
 		-moz-transform: scale(1.3);
 	}
 	100% {
 		opacity: 1;
-		text-shadow: 0px 0px 1px rgb(22, 22, 22);
+		text-shadow: 0px 0px 1px black;
 		-moz-transform: scale(1);
 	}
 }
@@ -394,34 +408,34 @@ h1.main, p.demos {
 @keyframes blurFadeInOut {
 	0% {
 		opacity: 0;
-		text-shadow: 0px 0px 40px rgb(22, 22, 22);
+		text-shadow: 0px 0px 40px black;
 		transform: scale(1.3);
 	}
 	20%, 75% {
 		opacity: 1;
-		text-shadow: 0px 0px 1px rgb(22, 22, 22);
+		text-shadow: 0px 0px 1px black;
 		transform: scale(1);
 	}
 	100% {
 		opacity: 0;
-		text-shadow: 0px 0px 50px rgb(22, 22, 22);
+		text-shadow: 0px 0px 50px black;
 		transform: scale(0);
 	}
 }
 @keyframes blurFadeIn {
 	0% {
 		opacity: 0;
-		text-shadow: 0px 0px 40px rgb(22, 22, 22);
+		text-shadow: 0px 0px 40px black;
 		transform: scale(1.3);
 	}
 	50% {
 		opacity: 0.5;
-		text-shadow: 0px 0px 10px rgb(22, 22, 22);
+		text-shadow: 0px 0px 10px black;
 		transform: scale(1.1);
 	}
 	100% {
 		opacity: 1;
-		text-shadow: 0px 0px 1px rgb(22, 22, 22);
+		text-shadow: 0px 0px 1px black;
 		transform: scale(1);
 	}
 }
@@ -479,8 +493,8 @@ h1.main, p.demos {
 
 .slide {
 
-    filter: contrast(50%);
-    -webkit-filter: contrast(50%);
+    filter: contrast(80%);
+    -webkit-filter: contrast(80%);
 
   background-size: cover;
   background-position: center center;
@@ -522,11 +536,14 @@ h1.main, p.demos {
 
 #carousel {
   position: relative;
-  height: 400px;
+	height: 410px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
   margin-top: 220px;
   top: 80%;
   transform: translateY(-50%);
-	overflow: hidden;
+	overflow: visible;
 }
 #carousel div {
   position: absolute;
@@ -534,9 +551,19 @@ h1.main, p.demos {
   opacity: 1;
 }
 #carousel div img {
-  width: 250px;
-  transition: width 1s;
+	width: 250px;
+	transition: width 1s;
+	box-shadow: -1px 11px 42px 1px rgba(0,0,0,0.75);
+-webkit-box-shadow: -1px 11px 42px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 11px 42px 1px rgba(0,0,0,0.75);
 }
+
+#carousel div img:hover {
+	box-shadow: -1px 23px 44px 7px rgba(0,0,0,0.75);
+-webkit-box-shadow: -1px 23px 44px 7px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 23px 44px 7px rgba(0,0,0,0.75);
+}
+
 #carousel div.hideLeft {
   left: 0%;
   opacity: 0;
@@ -544,6 +571,9 @@ h1.main, p.demos {
 }
 #carousel div.hideLeft img {
   width: 150px;
+}
+#carousel div.hideLeft a{
+	display: none;
 }
 #carousel div.hideRight {
   left: 100%;
@@ -553,13 +583,22 @@ h1.main, p.demos {
 #carousel div.hideRight img {
   width: 150px;
 }
+#carousel div.hideRight a{
+	display: none;
+}
 #carousel div.prev {
   z-index: 5;
   left: 30%;
   transform: translateY(50px) translateX(-50%);
 }
+#carousel div.next a{
+	display: none;
+}
 #carousel div.prev img {
   width: 200px;
+}
+#carousel div.prev a{
+	display: none;
 }
 #carousel div.prevLeftSecond {
   z-index: 4;
@@ -570,11 +609,26 @@ h1.main, p.demos {
 #carousel div.prevLeftSecond img {
   width: 150px;
 }
+#carousel div.prevLeftSecond a{
+	display: none;
+}
 #carousel div.selected {
   z-index: 10;
   left: 50%;
-  transform: translateY(0px) translateX(-50%);
+	transform: translateY(0px) translateX(-50%);
+	text-align: center;
 }
+#carousel div.selected a{
+	color: black;
+	font-size: 1.8em;
+	text-decoration: none;
+	font-weight: 800;
+}
+#carousel div.selected a:hover{
+	color: rgba(190, 0, 0, 0.993);
+	transition: all 0.1s ease-in-out;
+}
+
 #carousel div.next {
   z-index: 5;
   left: 70%;
@@ -582,6 +636,9 @@ h1.main, p.demos {
 }
 #carousel div.next img {
   width: 200px;
+}
+#carousel div.next a{
+	display: none;
 }
 #carousel div.nextRightSecond {
   z-index: 4;
@@ -592,12 +649,25 @@ h1.main, p.demos {
 #carousel div.nextRightSecond img {
   width: 150px;
 }
+#carousel div.nextRightSecond a{
+	display: none;
+}
 
 .buttons {
 text-align: center;
-  margin-top: -200px;
+	margin-top: -195px;
+	border: none;
+	font-size: 30px;
+	font-weight: 800;
 }
 
+.buttons a{
+	padding: 10px;
+}
+
+.buttons:hover {
+	cursor: pointer;
+}
 
 
 .title2{
@@ -618,29 +688,43 @@ text-align: center;
 
 .parallax-window {
   margin-top: 2em;
-  min-height: 15em;
+  min-height: 20em;
   background: transparent;
-
+	width: 100%;
 }
 
 /***********************************************************PRESENTATION***********************************************/
 .pres_content{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-	width: 100%;
+	display: flex;
+	flex-direction: row;
+	margin: 2em;
+	padding: 2em;
+  background-color: rgba(22, 22, 22, 0.575);
+  border-radius: 3px;
+}
+
+.img_parag{
+  width: 100%;
+  min-height: 100%;
+  background-color: #eee;
+  padding: 2em;
+  border-radius: 5px;
 }
 
 .img{
-  object-fit: cover;
-  width: 500px;
-  height: 250px;
+
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
 }
 
 .cont{
-	padding: 1em;
-	font-size: 20px;
-	text-align:justify;
+	height: auto;
+  background-color: #eee;
+	padding: 2em;
+  margin-left: 3em;
+  border-radius: 5px;
 }
 
 /***********************************************************FOOTER***********************************************/
@@ -663,7 +747,7 @@ text-align: center;
 @media only screen and (max-width: 1600px) {
 	.main_title{
 		top: 30%;
-		font-size: 9em;
+		font-size: 8em;
 	}
 	
   .sp-container h2 {
@@ -678,7 +762,7 @@ text-align: center;
 
 	.main_title{
 		top: 25%;
-		font-size: 7em;
+		font-size: 6em;
 	}
 	
 
@@ -689,7 +773,9 @@ text-align: center;
 
 
 	#carousel {
-		position: relative;		height: 300px;
+		position: relative;		
+		height: 300px;
+		width: 70%;
 		margin-top: 180px;
 		top: 50%;
 	}
@@ -743,22 +829,25 @@ height: 0.6em;
 
 	.main_title{
 		top: 20%;
-		font-size: 6em;
+		font-size: 4em;
 	}
 	
 
   .allo_title{
     font-size: 3em;
   }
-
+	.sp-content {
+		display: none;
+	}
   .sp-container h2 {
 		margin-top: -2.2em;
     font-size: 3.5em;
 	}
-	
+	#carousel{
+		width: 90%;
+	}
 	.img{
 		float: left;
-		width: 300px;
 		height: 150px;
 	}
 
@@ -768,8 +857,9 @@ height: 0.6em;
 
 		.main_title{
 			top: 15%;
-			font-size: 5em;
+			font-size: 3em;
 		}
+
 
     .m-nav-toggle {
       margin-left: 30%;
@@ -785,13 +875,52 @@ height: 0.6em;
     }
 
 	.title2{
-		font-size: 2em;
+		font-size: 1.4em;
 		height: 1.2em;
 		padding-top: 0.5em;
 	}
 
+	#carousel{
+		width: 100%;
+	}
+	#carousel div.selected a{
+		font-size: 1em;
+	}
+
 #deco{
-height: 0.5em;
+height: 0.5em;}
+
+	.pres_content{
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 0;
+		margin: 0;
+  }
+  .img_parag{
+    padding: 1em;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .cont{
+    margin-left: 0;
+    padding: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    border-radius: 5px;
+    border-radius: 0 0 5px 5px;
+  }
+
+	p{
+		margin-top: 0;
+		font-size: 0.8em;
+	}
+
+	#ligne{
+		display: none;
+	}
+}
+
+
 }
 	}
 

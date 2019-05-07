@@ -8,85 +8,11 @@ body {
 .row {
   margin-left: -15px;
   margin-right: -15px;
-  background-color: #dadba7;
 }
 
-/********************************** NAVBAR ***********************************/
-#Navbar{
-  display: flex;
-  flex-direction:row;
-  justify-content:space-around;
- width:70%;
- margin:auto;
- font-weight:bolder;
- font-family: 'Poiret One', cursive;
- font-size: 20px;
-}
-
-#link_nav{
-  position: fixed;
-  z-index:99;
-  display:flex;
- flex-direction: row;
- padding-left:3%;
- padding-top:10px;
- padding-bottom:10px;
- background-color:transparent;
- font-size: 1.8em;
-}
-
-
-
-#link_nav a{
-  text-decoration: none;
-  color: whitesmoke;
-}
-
-#Navbar a{
-  padding:5px;
-  border:2px solid white;
-  border-radius:15px;
-}
-
-#link_nav a:hover{
-  color:grey;
-}
-
-hr {
-  width: 100%;
-  color: white;
-}
-
-.m-nav-toggle {
-  width: 30px;
-  height: 23px;
-  margin-left: 60%;
-  display: none;
-  align-items: center;
-  cursor: pointer;
-}
-
-span.m-toggle-icon,
-span.m-toggle-icon:before,
-span.m-toggle-icon:after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  background: #fff;
-  position: relative;
-}
-
-span.m-toggle-icon:before {
-  top: 10px;
-}
-
-span.m-toggle-icon:after {
-  top: -13px;
-}
-
-#Navbar.is-open {
-  transform: translateY(0);
+.container{
+  margin-top:400px;
+  height: 30px;
 }
 
 /********************************** HEADER ***********************************/
@@ -344,27 +270,6 @@ button:focus {
 .siema {
   margin-bottom: 30px;
   margin-left: 1em;
-}
-
-/********************************** FOOOTER ***********************************/
-
-#footer {
-  background-color: #dadba7;
-  font-family: 'Roboto Condensed', sans-serif;
-  border-block-start: solid 5px #47474773;
-}
-
-
-#footer a,
-p,
-h5 {
-  color: black;
-  line-height: 0.9em;
-  margin-bottom: 0.6em;
-}
-
-container {
-  margin-bottom: 20px;
 }
 
 /********************************** BACK TO TOP ***********************************/
