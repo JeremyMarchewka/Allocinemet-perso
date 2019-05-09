@@ -26,20 +26,43 @@ require_once '../database.php';
     require_once 'function.php';
 
     $film = getFilm($db,1, $_GET['id']);
+    if (!isset($_GET['id'])){
+        header('location:index.php');
+    }
 
+    if (isset($_POST) AND !empty($_POST)) {
+        if (!empty($_POST['Nom_du_film']) AND !empty($_POST['Synopsis'])) {
+            $req = $db->prepare('UPDATE film SET Nom_du_film = :Nom_du_film, Synopsis = :Synopsis WHERE Id_film = :Id_film');
+            $req->execute([
+                'Nom_du_film' => $_POST['name'],
+                'Synopsis' => $_POST['content'],
+                'Id_film' => $_GET['id'],
+            ]);
+            $_SESSION['flash']['success'] = 'Film modifié !';
+        }else{
+            $_SESSION['flash']['error'] = 'Champs manquants !';
+        }
+    }
 ?>
 
 <div class="container">
-    <img src="<?= $film->Affiche_du_film ?>" alt="">
-    <h1><?= $film->Nom_du_film ?></h1>
-    <h5><?= $film->Synopsis ?></h5>
-    <?php if(isset($_SESSION['admin']) AND !empty($_SESSION['admin'])): ?>
-    <div class="row">
-        <a href="delete_film.php?id=<?= $film->Id_film ?>"><div class="action col s-4"><h5>Supprimer</h5></div></a>
-        <a href="modify_film.php?id=<?= $film->Id_film ?>"><div class="action col s-4"><h5>Modifier</h5></div></a>
-        <a href="admin/"><div class="action col s-4"><h5>Espace Admin</h5></div></a>
-    </div>
-    <?php endif ?>
+    <h3>Modifier l'article "<?= $film->Nom_du_film ?></h3>
+    <h4>Laissez vide si aucun changement</h4>
+    <?php
+    if (isset($_SESSION['flash']['success'])) {
+        echo "<div class='success'>".$_SESSION['flash']['success'].'</div>';
+    }
+    elseif (isset($_SESSION['flash']['error'])) {
+        echo "<div class='error'>".$_SESSION['flash']['error'].'</div>';
+    }
+    ?>
+    <form method="POST">
+        <h4>Le nom :</h4>
+        <input type="text" name="name" value="<?= $film->Nom_du_film ?>"/>
+        <h4>Le contenu :</h4>
+        <textarea name="content"><?= $film->Synopsis ?></textarea>
+        <button>Modifier</button>
+    </form>
 </div>
 <script src="https://code.jquery.com/jquery-3.4.0.slim.min.js"
         integrity="sha256-ZaXnYkHGqIhqTbJ6MB4l9Frs/r7U4jlx7ir8PJYBqbI=" crossorigin="anonymous"></script>

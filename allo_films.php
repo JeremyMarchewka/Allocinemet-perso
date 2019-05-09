@@ -28,16 +28,7 @@
     <?php include('nav.php');?> 
 
 
-<div class="container">
-    <?php 
-        $req = $db->query('SELECT * FROM film');
-        $films = $req->fetchAll();
 
-        foreach ($films as $film): ?>
-            echo $film['Nom_du_film'];
-        
-    <?php endforeach ?>
-</div>
     <!--//////////////////////////////  HEADER  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <div class="header_films" id="haut">
@@ -143,61 +134,36 @@
 
         <!--//////////////////////////////  MINIATURES FILMS DROITE  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
+
+
         <div class="col-lg-9 col-md-8 col-sm-8">
             <div class="liens_films fadeInUp animated">
-                <div class="titre"> Nouveautés </div><br />
-                <a href="content.php"><img class="effect " src="img/1.jpg" id="action">
-                    <p>blablabla</p>
+            <div class="titre"> Nouveautés </div><br />
+            <?php 
+        $req = $db->query('SELECT * FROM film');
+        $films = $req->fetchAll();
+
+        foreach ($films as $film): ?>
+
+
+                <a href="content.php?id=<?= $film['Id_film']?>"><img class="effect " src="<?= $film['Affiche_du_film']?>" id="action">
+                    <p><?= $film['Nom_du_film']?></p>
                 </a>
-                <a href="content.php"><img class="effect " src="img/2.jpg" id="science-fiction">
-                    <p>blablabla</p>
-                </a>
-                <a href="content.php"><img class="effect " src="img/3.jpg" id="horreur">
-                    <p>blablabla</p>
-                </a>
-                <a href="content.php"><img class="effect " src="img/4.jpg" id="action">
-                    <p>blablabla</p>
-                </a>
-                <a href="content.php"><img class="effect " src="img/5.jpg" id="science-fiction">
-                    <p>blablabla</p>
-                </a>
-                <a href="content.php"><img class="effect " src="img/6.jpg" id="horreur">
-                    <p>blablabla</p>
-                </a>
-                <a href="content.php"><img class="effect " src="img/7.jpg" id="action">
-                    <p>blablabla</p>
-                </a>
-                <a href="content.php"><img class="effect " src="img/8.jpg" id="science-fiction">
-                    <p>blablabla</p>
-                </a>
-                <a href="content.php"><img class="effect " src="img/9.jpg" id="horreur">
-                    <p>blablabla</p>
-                </a>
-                <a href="content.php"><img class="effect " src="img/10.jpg" id="action">
-                    <p>blablabla</p>
-                </a>
+                <?php endforeach ?>
             </div>
         </div>
+
 
         <!--//////////////////////////////  CAROUSEL SIEMA  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
         <div class="siema">
-            <img src="img/1.jpg">
-            <img src="img/2.jpg">
-            <img src="img/3.jpg">
-            <img src="img/4.jpg">
-            <img src="img/5.jpg">
-            <img src="img/6.jpg">
-            <img src="img/7.jpg">
-            <img src="img/8.jpg">
-            <img src="img/9.jpg">
-            <img src="img/10.jpg">
-            <img src="img/1.jpg">
-            <img src="img/2.jpg">
-            <img src="img/3.jpg">
-            <img src="img/4.jpg">
-            <img src="img/5.jpg">
-            <img src="img/6.jpg">
+        <?php 
+        $req = $db->query('SELECT * FROM film');
+        $films = $req->fetchAll();
+
+        foreach ($films as $film): ?>
+            <img src="<?= $film['Affiche_du_film']?>">
+            <?php endforeach ?>
         </div>
 
         <button class="prev">

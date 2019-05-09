@@ -1,4 +1,6 @@
-<?php session_start() ?>
+<?php session_start();
+
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,9 +24,14 @@
 
     <?php
     require_once '../database.php';
-    if(!$_SESSION['admin']) {
+    
+    if(!isset($_SESSION['admin'])) {
         header('location:login.php');
     }
+
+    $req = $db->query('SELECT * FROM user');
+    $users = $req->fetch();
+
 
     ?>
     <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->

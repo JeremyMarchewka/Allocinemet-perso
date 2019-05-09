@@ -1,107 +1,111 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Content</title>
-    <link href="https://fonts.googleapis.com/css?family=Anton|Gloria+Hallelujah|Righteous" rel="stylesheet">
-<!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<!--Animate CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-<!--  pour la police des titres  -->
-    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-<!-- pour les autres textes -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-<!--mon CSS -->
-    <link rel="stylesheet" href="css/style_pages_cont_real_act.css">
-    <link rel="stylesheet" href="css/footer.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Content</title>
+  <link href="https://fonts.googleapis.com/css?family=Anton|Gloria+Hallelujah|Righteous" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!--Animate CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <!--  pour la police des titres  -->
+  <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+  <!-- pour les autres textes -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  <!--mon CSS -->
+  <link rel="stylesheet" href="css/style_pages_cont_real_act.css">
+  <link rel="stylesheet" href="css/footer.css">
 
 </head>
 
-<body>
+<body id="haut">
 
-    <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
-    <?php include('nav.php');?> 
+  <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+  <?php include('nav.php');?>
 
   <main id="content">
 
+  <?php
+require_once 'database.php';
+    require_once 'function.php';
+
+    $film = getFilm($db,1, $_GET['id']);
+
+?>
+
     <!--  pour le titre -->
 
-  <div class="hoofd">
-    <h1 class="text-uppercase">Titre du film</h1>
-    <div class="fleches_2">
-    <img class="fleche_g animated fadeInLeft" src="img/ligne_g.png">
-    <img class="fleche_d animated fadeInRight" src="img/ligne_d.png">
-</div>
-</div>
+    <div class="hoofd">
+      <h1 class="text-uppercase"><?= $film->Nom_du_film ?></h1>
+      <div class="fleches_2">
+        <img class="fleche_g animated fadeInLeft" src="img/ligne_g.png">
+        <img class="fleche_d animated fadeInRight" src="img/ligne_d.png">
+      </div>
+    </div>
 
     <!-- pour l'image du film -->
     <div class="media shadow-lg p-3 mb-5 bg-light rounded">
-      <img src="..." class="mr-3" alt="...">
+      <img src="<?= $film->Affiche_du_film ?>" class="mr-3" alt="...">
     </div>
 
     <!-- pour la description du film -->
 
-    <p class="text-center bg-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <p class="text-center bg-light">
+    <?= $film->Synopsis ?>
     </p>
 
     <!-- pour la partie récap d'infos et la bande annonce -->
 
-  <div class="row">
-    <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
-    <div class="col-10 col-sm-10 col-md-10 col-lg-4 col-xl-5">
+    <div class="row">
+      <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"></div>
+      <div class="col-10 col-sm-10 col-md-10 col-lg-4 col-xl-5">
 
-    <div class="list-group">
-  <a href="realisateur.php" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Réalisateur</h5>
+        <div class="list-group">
+          <a href="realisateur.php" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Réalisateur</h5>
+            </div>
+            <p class="mb-1">Michael Bay</p>
+            <small>Donec id elit non mi porta.</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Production</h5>
+            </div>
+            <p class="mb-1">Harvey Weinstein</p>
+            <small class="text-muted">Donec id elit non mi porta.</small>
+          </a>
+          <a href="acteur.php" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Acteurs</h5>
+            </div>
+            <p class="mb-1">Robert Robichet, Jean-Pierre Vidol, Marcel Patulacci, un poney</p>
+            <small class="text-muted">Donec id elit non mi porta.</small>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-1 col-sm-1 col-md-2 col-lg-1 col-xl-1"></div>
+      <div class="col-8 col-sm-8 col-md-8 col-lg-4 col-xl-4">
+      <?= $film->Trailer?>
+      </div>
+
+      <div class="col-2 col-sm-2 col-md-2 col-lg-1 col-xl-1"></div>
+
     </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-    <small>Donec id elit non mi porta.</small>
-  </a>
-  <a href="#" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Production</h5>
-    </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-    <small class="text-muted">Donec id elit non mi porta.</small>
-  </a>
-  <a href="acteur.php" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Acteurs</h5>
-    </div>
-    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-    <small class="text-muted">Donec id elit non mi porta.</small>
-  </a>
-</div>
-</div>
 
-  <div class="col-1 col-sm-3 col-md-3 col-lg-1 col-xl-1"></div>
-  <div class="col-8 col-sm-8 col-md-8 col-lg-4 col-xl-4">
-    <iframe class="shadow-lg p-3 mb-5 bg-light rounded" src="" height="250px" width="450px"></iframe>
-  </div>
-
-<div class="col-2 col-sm-2 col-md-2 col-lg-1 col-xl-1"></div>
-
-</div>
 
   </main>
 
-<footer id="footer" class="page-footer font-small text-white mdb-color pt-4 sticky bottom">
+  <footer id="footer" class="page-footer font-small text-white mdb-color pt-4 sticky bottom">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left ">
@@ -112,7 +116,8 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
           <h5 class=" text-uppercase mb-4  font-weight-bold text-white"><a href="index.html"> AllocineMET</a></h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
         <!-- Grid column -->
@@ -167,9 +172,9 @@
           <p>
             www.AllocineMET.net</p>
           <p>
-             TEL +33 6 52 50 05 35</p>
+            TEL +33 6 52 50 05 35</p>
           <p>
-             TEL +33 6 87 26 69 70</p>
+            TEL +33 6 87 26 69 70</p>
         </div>
         <!-- Grid column -->
 
@@ -185,7 +190,7 @@
         <div class="col-md-7 col-lg-8">
 
           <!--Copyright-->
-      <p class="text-center text-md-left">© 2019 Copyright: AllocineMET
+          <p class="text-center text-md-left">© 2019 Copyright: AllocineMET
 
           </p>
 
@@ -234,37 +239,44 @@
 
   <div><a id="cRetour" class="cInvisible" href="#haut"></a></div>
 
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
 
-<script>
-      
-$('.m-nav-toggle').click(function(e){
-        e.preventDefault();
-        $('#Navbar').toggleClass('is-open');
+  <script>
+    $('.m-nav-toggle').click(function (e) {
+      e.preventDefault();
+      $('#Navbar').toggleClass('is-open');
     })
 
-document.addEventListener('DOMContentLoaded', function () {
-    window.onscroll = function (ev) {
+    document.addEventListener('DOMContentLoaded', function () {
+      window.onscroll = function (ev) {
         document.getElementById("cRetour").className = (window.pageYOffset > 100) ? "cVisible" :
-            "cInvisible";
-    };
-});
+          "cInvisible";
+      };
+    });
 
-$('#sidebarCollapse').click(function (e) {
-    e.preventDefault();
-    $('#sidebar').toggleClass('active');
-})
+    $('#sidebarCollapse').click(function (e) {
+      e.preventDefault();
+      $('#sidebar').toggleClass('active');
+    })
 
-function openModal() {
-    document.getElementById("modal").style.top = "0px";
-}
+    function openModal() {
+      document.getElementById("modal").style.top = "0px";
+    }
 
-function closeModal() {
-    document.getElementById("modal").style.top = "-780px";
-}</script>
+    function closeModal() {
+      document.getElementById("modal").style.top = "-780px";
+    }
+  </script>
 
 </body>
+
 </html>

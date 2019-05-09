@@ -4,6 +4,10 @@
   box-sizing: 0;
 }
 
+body{
+  width: 100%;
+}
+
 /*------------------------------
 ----pour le body des pages------
 -------------------------------*/
@@ -147,10 +151,16 @@ span.m-toggle-icon:after{top: -13px;}
 
 #content .media {
   width: 70%;
-  height: 400px;
+  height: 600px;
   margin: 20px auto;
+  display: flex;
+  justify-content: center;
 }
 
+#content .media img{
+ width: auto;
+ height: 100%;
+}
 
 /*------------------------------
 ----pour la partie texte------
