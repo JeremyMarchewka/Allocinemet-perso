@@ -31,9 +31,9 @@
 
     $req = $db->query('SELECT * FROM user');
     $users = $req->fetch();
-
-
     ?>
+
+    
     <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <?php include('../nav.php');?> 

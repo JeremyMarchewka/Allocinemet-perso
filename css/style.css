@@ -746,7 +746,7 @@ h1.main, p.demos {
 	text-align: center;
 }
 #carousel div.selected a{
-	color: white;
+	color: black;
 	font-size: 1.8em;
 	text-decoration: none;
 	font-weight: 800;
