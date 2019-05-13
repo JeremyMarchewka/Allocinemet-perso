@@ -26,14 +26,14 @@
     require_once '../database.php';
     
     if(!isset($_SESSION['admin'])) {
-        header('location:login.php');
+        header('location: login.php');
     }
 
     $req = $db->query('SELECT * FROM user');
     $users = $req->fetch();
     ?>
 
-    
+
     <!--//////////////////////////////  NAVBAR  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 
     <?php include('../nav.php');?> 
