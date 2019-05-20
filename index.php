@@ -81,21 +81,6 @@
 	</div>
 </div>
 
-
-<?php
-    require_once 'database.php';
-    
-    if(!$_SESSION['admin']) {
-        header('location:login.php');
-    }
-
-    $req = $db->query('SELECT * FROM user');
-    $users = $req->fetch();
-
-
-    ?>
-
-
   </div>
 
   <div class="title2"><img src="img/decogcutblck.png" id="deco">Nouveautés<img src="img/decodcutblck.png" id="deco">

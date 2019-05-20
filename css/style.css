@@ -39,73 +39,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffe8', end
   object-fit: cover;
 }
 
-/***********************************************************NAVBAR***********************************************/
-
-.navbar {
-  background-color: rgba(22, 22, 22, 0.575);
-  font-size: 1.2em;
-  position: fixed;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-	width: 100%;
-}
-
-.navbar-dark .navbar-nav .nav-link {
-  color: rgb(255, 255, 255);
-}
-
-.navbar-dark:hover .navbar-nav:hover .nav-link:hover {
-  color: rgba(175, 175, 175, 0.747);
-}
-
-
-.navbar-brand{
-	font-size: 1.3em;
-	font-family: 'Anton', sans-serif;
-	letter-spacing: 0.1em;
-	color: rgba(190, 0, 0, 0.993)!important;
-	margin-right: 1.2em;
-}
-
-.navbar-brand span{
-	letter-spacing: 0.1em;
-	color: #eee!important;
-}
-.navbar-scroll {
-  background-color: rgba(22, 22, 22, 0.979);
-  transition: background-color 0.5s;
-}
-
-@media(max-width: 991px){
-    .navbar {background-color: rgba(22, 22, 22, 0.575) !important; }
-    
-}
-
-
-.bg-primary {
-  background-color: #1f1f1f!important;
-}
-
-.btn-success {
-  color: rgb(236, 236, 236);
-  background-color: #5f5f5f;
-  border-color: #2b2b2b;
-}
-
-.btn-success:hover{
-  background-color: #383838;
-  border-color: #0f0f0f;
-}
-
-:root{
-  --success: #383838;
-}
 
 /***********************************************************HEADER***********************************************/
 
@@ -991,15 +924,6 @@ height: 0.6em;
 			font-size: 3em;
 		}
 
-
-    .m-nav-toggle {
-      margin-left: 30%;
-    }
-
-    #Navbar {
-      display: none;
-    }
-
 		.sp-content {
 			display: none;
 		}
@@ -1066,9 +990,6 @@ height: 0.5em;}
 			font-size: 3em;
 		}
 
-    .m-nav-toggle {
-      margin-left: 15%;
-    }
     .sp-container h2 {
 			font-size: 1.8em;
 			margin-top: -3.6em;

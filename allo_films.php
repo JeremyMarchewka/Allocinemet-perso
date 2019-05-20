@@ -49,54 +49,17 @@
 
                     <button>Rechercher</button>
 
-                    <li><a href="#" class="collapsible">Action</a>
-                        <ul>
-                            <li><a href="#">Top 2019</a></li>
-                            <li><a href="#">Meilleurs films</a></li>
-                            <li><a href="#">Box office</a></li>
-                            <li><a href="#">Tous les films</a></li>
-                        </ul>
+                    <?php 
+        $req = $db->query('SELECT * FROM genre');
+        $genres = $req->fetchAll();
+
+        foreach ($genres as $genre): ?>
+
+                    <li><a href="allo_films.php?id=<?= $genre['Id_genre']?>" class="collapsible"><?= $genre['Genre']?></a>
                     </li>
-                    <li><a href="#" class="collapsible">Science-fiction</a>
-                        <ul>
-                            <li><a href="#">Top 2019</a></li>
-                            <li><a href="#">Meilleurs films</a></li>
-                            <li><a href="#">Box office</a></li>
-                            <li><a href="#">Tous les films</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" class="collapsible">Comédie</a>
-                        <ul>
-                            <li><a href="#">Top 2019</a></li>
-                            <li><a href="#">Meilleurs films</a></li>
-                            <li><a href="#">Box office</a></li>
-                            <li><a href="#">Tous les films</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" class="collapsible">Drame</a>
-                        <ul>
-                            <li><a href="#">Top 2019</a></li>
-                            <li><a href="#">Meilleurs films</a></li>
-                            <li><a href="#">Box office</a></li>
-                            <li><a href="#">Tous les films</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" class="collapsible">Animation</a>
-                        <ul>
-                            <li><a href="#">Top 2019</a></li>
-                            <li><a href="#">Meilleurs films</a></li>
-                            <li><a href="#">Box office</a></li>
-                            <li><a href="#">Tous les films</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#" class="collapsible">Horreur</a>
-                        <ul>
-                            <li><a href="#">Top 2019</a></li>
-                            <li><a href="#">Meilleurs films</a></li>
-                            <li><a href="#">Box office</a></li>
-                            <li><a href="#">Tous les films</a></li>
-                        </ul>
-                    </li>
+
+                    <?php endforeach ?>
+
                 </ul>
             </div>
 
@@ -108,24 +71,19 @@
                     <button>Rechercher</button>
                     <li><a href="#" class="collapsible">Films</a>
                         <ul>
-                            <li><a href="#" class="collapsible">Action</a>
+
+                        <?php 
+        $req = $db->query('SELECT * FROM genre');
+        $genres = $req->fetchAll();
+
+        foreach ($genres as $genre): ?>
+
+                            <li><a href="allo_films.php?id=<?= $genre['Id_genre']?>" class="collapsible"><?= $genre['Genre']?>
 
                             </li>
-                            <li><a href="#" class="collapsible">Science-fiction</a>
 
-                            </li>
-                            <li><a href="#" class="collapsible">Comédie</a>
+                            <?php endforeach ?>
 
-                            </li>
-                            <li><a href="#" class="collapsible">Drame</a>
-
-                            </li>
-                            <li><a href="#" class="collapsible">Animation</a>
-
-                            </li>
-                            <li><a href="#" class="collapsible">Horreur</a>
-
-                            </li>
                         </ul>
                     </li>
                 </ul>
